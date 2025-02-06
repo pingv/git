@@ -5,15 +5,28 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
-            max-width: 800px;
+            line-height: 1.6;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #2d3748;
         }
         .command-container {
-            background-color: #f5f5f5;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 20px 0;
+            background-color: #f8fafc;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border-left: 4px solid #4299e1;
         }
         .command-part {
             position: relative;
@@ -21,6 +34,7 @@
             margin: 0 5px;
             font-family: monospace;
             cursor: help;
+            color: #2b6cb0;
         }
         .tooltip {
             visibility: hidden;
@@ -28,22 +42,18 @@
             bottom: 100%;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #333;
+            background-color: #1a202c;
             color: white;
             padding: 8px;
             border-radius: 4px;
             width: 200px;
             text-align: center;
-            margin-bottom: 5px;
             font-size: 14px;
             z-index: 1;
+            margin-bottom: 8px;
         }
         .command-part:hover .tooltip {
             visibility: visible;
-        }
-        .git-command {
-            color: #0366d6;
-            font-weight: bold;
         }
     </style>
 </head>
@@ -51,61 +61,183 @@
     <h1>Git Command Guide</h1>
     <p>Hover over each part of the command to see what it does.</p>
 
-    <div class="command-container">
-        <h3>List all branches:</h3>
-        <div class="git-command">
-            <span class="command-part">
+    <!-- Basic Operations -->
+    <div class="section">
+        <h2>1. Basic Operations</h2>
+        
+        <div class="command-container">
+            <h3>Initialize Repository:</h3>
+            <div class="command-part">
                 git
-                <span class="tooltip">Command to invoke Git version control</span>
-            </span>
-            <span class="command-part">
+                <span class="tooltip">Version control system command</span>
+            </div>
+            <div class="command-part">
+                init
+                <span class="tooltip">Initialize a new Git repository</span>
+            </div>
+        </div>
+
+        <div class="command-container">
+            <h3>Stage Changes:</h3>
+            <div class="command-part">
+                git
+                <span class="tooltip">Version control system command</span>
+            </div>
+            <div class="command-part">
+                add
+                <span class="tooltip">Add files to staging area</span>
+            </div>
+            <div class="command-part">
+                .
+                <span class="tooltip">Stage all files in current directory</span>
+            </div>
+        </div>
+
+        <div class="command-container">
+            <h3>Commit Changes:</h3>
+            <div class="command-part">
+                git
+                <span class="tooltip">Version control system command</span>
+            </div>
+            <div class="command-part">
+                commit
+                <span class="tooltip">Record changes to the repository</span>
+            </div>
+            <div class="command-part">
+                -m
+                <span class="tooltip">Provide commit message</span>
+            </div>
+            <div class="command-part">
+                "message"
+                <span class="tooltip">Your descriptive commit message</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Branch Management -->
+    <div class="section">
+        <h2>2. Branch Management</h2>
+        
+        <div class="command-container">
+            <h3>List Branches:</h3>
+            <div class="command-part">
+                git
+                <span class="tooltip">Version control system command</span>
+            </div>
+            <div class="command-part">
                 branch
-                <span class="tooltip">Manage branches (list, create, or delete)</span>
-            </span>
-            <span class="command-part">
+                <span class="tooltip">List, create, or delete branches</span>
+            </div>
+            <div class="command-part">
                 -a
                 <span class="tooltip">Show all branches (local and remote)</span>
-            </span>
+            </div>
         </div>
-    </div>
 
-    <div class="command-container">
-        <h3>Create and switch to a new branch:</h3>
-        <div class="git-command">
-            <span class="command-part">
+        <div class="command-container">
+            <h3>Create New Branch:</h3>
+            <div class="command-part">
                 git
-                <span class="tooltip">Command to invoke Git version control</span>
-            </span>
-            <span class="command-part">
+                <span class="tooltip">Version control system command</span>
+            </div>
+            <div class="command-part">
                 checkout
-                <span class="tooltip">Switch branches or restore working tree files</span>
-            </span>
-            <span class="command-part">
+                <span class="tooltip">Switch branches or restore files</span>
+            </div>
+            <div class="command-part">
                 -b
-                <span class="tooltip">Create a new branch and switch to it</span>
-            </span>
-            <span class="command-part">
-                feature-name
+                <span class="tooltip">Create and switch to new branch</span>
+            </div>
+            <div class="command-part">
+                feature/new-feature
                 <span class="tooltip">Name of your new branch</span>
-            </span>
+            </div>
         </div>
     </div>
 
-    <div class="command-container">
-        <h3>Stage all changes:</h3>
-        <div class="git-command">
-            <span class="command-part">
+    <!-- Remote Operations -->
+    <div class="section">
+        <h2>3. Remote Operations</h2>
+        
+        <div class="command-container">
+            <h3>Clone Repository:</h3>
+            <div class="command-part">
                 git
-                <span class="tooltip">Command to invoke Git version control</span>
-            </span>
-            <span class="command-part">
-                add
-                <span class="tooltip">Add file contents to the staging area</span>
-            </span>
-            <span class="command-part">
-                .
-                <span class="tooltip">Stage all files in the current directory</span>
-            </span>
+                <span class="tooltip">Version control system command</span>
+            </div>
+            <div class="command-part">
+                clone
+                <span class="tooltip">Copy a repository from remote source</span>
+            </div>
+            <div class="command-part">
+                URL
+                <span class="tooltip">Remote repository URL</span>
+            </div>
+        </div>
+
+        <div class="command-container">
+            <h3>Push Changes:</h3>
+            <div class="command-part">
+                git
+                <span class="tooltip">Version control system command</span>
+            </div>
+            <div class="command-part">
+                push
+                <span class="tooltip">Upload local changes to remote</span>
+            </div>
+            <div class="command-part">
+                origin
+                <span class="tooltip">Remote repository name</span>
+            </div>
+            <div class="command-part">
+                main
+                <span class="tooltip">Branch name to push to</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advanced Operations -->
+    <div class="section">
+        <h2>4. Advanced Operations</h2>
+        
+        <div class="command-container">
+            <h3>Interactive Rebase:</h3>
+            <div class="command-part">
+                git
+                <span class="tooltip">Version control system command</span>
+            </div>
+            <div class="command-part">
+                rebase
+                <span class="tooltip">Reapply commits on top of another base</span>
+            </div>
+            <div class="command-part">
+                -i
+                <span class="tooltip">Interactive mode</span>
+            </div>
+            <div class="command-part">
+                HEAD~3
+                <span class="tooltip">Last three commits</span>
+            </div>
+        </div>
+
+        <div class="command-container">
+            <h3>Reset Hard:</h3>
+            <div class="command-part">
+                git
+                <span class="tooltip">Version control system command</span>
+            </div>
+            <div class="command-part">
+                reset
+                <span class="tooltip">Reset current HEAD to specified state</span>
+            </div>
+            <div class="command-part">
+                --hard
+                <span class="tooltip">Discard all changes in working directory</span>
+            </div>
+            <div class="command-part">
+                origin/main
+                <span class="tooltip">Reset to remote main branch</span>
+            </div>
         </div>
     </div>
 </body>
