@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Git Command Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .command-container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .command-part {
+            position: relative;
+            display: inline-block;
+            margin: 0 5px;
+            font-family: monospace;
+            cursor: help;
+        }
+        .tooltip {
+            visibility: hidden;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 8px;
+            border-radius: 4px;
+            width: 200px;
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 14px;
+            z-index: 1;
+        }
+        .command-part:hover .tooltip {
+            visibility: visible;
+        }
+        .git-command {
+            color: #0366d6;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Git Command Guide</h1>
+    <p>Hover over each part of the command to see what it does.</p>
+
+    <div class="command-container">
+        <h3>List all branches:</h3>
+        <div class="git-command">
+            <span class="command-part">
+                git
+                <span class="tooltip">Command to invoke Git version control</span>
+            </span>
+            <span class="command-part">
+                branch
+                <span class="tooltip">Manage branches (list, create, or delete)</span>
+            </span>
+            <span class="command-part">
+                -a
+                <span class="tooltip">Show all branches (local and remote)</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="command-container">
+        <h3>Create and switch to a new branch:</h3>
+        <div class="git-command">
+            <span class="command-part">
+                git
+                <span class="tooltip">Command to invoke Git version control</span>
+            </span>
+            <span class="command-part">
+                checkout
+                <span class="tooltip">Switch branches or restore working tree files</span>
+            </span>
+            <span class="command-part">
+                -b
+                <span class="tooltip">Create a new branch and switch to it</span>
+            </span>
+            <span class="command-part">
+                feature-name
+                <span class="tooltip">Name of your new branch</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="command-container">
+        <h3>Stage all changes:</h3>
+        <div class="git-command">
+            <span class="command-part">
+                git
+                <span class="tooltip">Command to invoke Git version control</span>
+            </span>
+            <span class="command-part">
+                add
+                <span class="tooltip">Add file contents to the staging area</span>
+            </span>
+            <span class="command-part">
+                .
+                <span class="tooltip">Stage all files in the current directory</span>
+            </span>
+        </div>
+    </div>
+</body>
+</html>
